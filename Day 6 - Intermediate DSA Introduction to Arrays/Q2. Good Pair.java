@@ -70,3 +70,20 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+
+        int n = A.size();
+
+        for (int i = 0; i < n - 1; i++) {
+            int num = A.get(i);
+            for (int j = i + 1; j < n; j++) {
+                if (num + A.get(j) == B) {
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+}
