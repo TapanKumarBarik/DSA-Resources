@@ -55,3 +55,16 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+
+public class Solution {
+    public ArrayList<Integer> solve(ArrayList<Integer> A, int B, int C) {
+
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+
+        for (int i = B; i <= C; i++) {
+            arr.add(A.get(i));
+        }
+
+        return arr;
+    }
+}
