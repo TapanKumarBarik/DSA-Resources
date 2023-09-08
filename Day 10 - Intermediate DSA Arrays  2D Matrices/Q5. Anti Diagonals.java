@@ -71,3 +71,44 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> diagonal(ArrayList<ArrayList<Integer>> A) {
+
+        int n = A.size();
+
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<ArrayList<Integer>>();
+
+        for (int i = 0; i < 2 * n - 1; i++) {
+
+            int j = 0;
+            if (i >= n) {
+                j = i - n + 1;
+            }
+            ArrayList<Integer> ar = new ArrayList<>();
+            int k = 0;
+            for (int l = j; l <= i - j; l++) {
+                ar.add(A.get(l).get(i - l));
+                k++;
+            }
+
+            for (int l = k; k < n; k++) {
+                ar.add(0);
+            }
+            arr.add(ar);
+        }
+
+        return arr;
+    }
+}
+
+/*
+ * 2*n-1;
+ * offset that is if i<n then offset =0;
+ * else offset=i-n+1;
+ * // * k=0;
+ * // * for j=offset ,j<=i-offset j++
+ * // * add---a.get(j).get(i-j)
+ * // * k++
+ * 
+ */
