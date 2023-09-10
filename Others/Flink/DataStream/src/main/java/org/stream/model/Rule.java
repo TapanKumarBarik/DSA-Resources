@@ -6,6 +6,9 @@ public class Rule {
     private float MaximunAmout;
     private Integer MaximumTransactionPerDay;
 
+    public Rule() {
+    }
+
     public Rule(String ruleType, float maximunAmout, Integer maximumTransactionPerDay) {
         RuleType = ruleType;
         MaximunAmout = maximunAmout;
@@ -34,5 +37,14 @@ public class Rule {
 
     public void setMaximumTransactionPerDay(Integer maximumTransactionPerDay) {
         MaximumTransactionPerDay = maximumTransactionPerDay;
+    }
+
+    @Override
+    public String toString() {
+        return "Rule{" +
+                "RuleType='" + RuleType + '\'' +
+                ", MaximunAmout=" + MaximunAmout +
+                ", MaximumTransactionPerDay=" + MaximumTransactionPerDay +
+                '}';
     }
 }

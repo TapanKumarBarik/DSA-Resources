@@ -1,5 +1,7 @@
 package org.socket;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -7,7 +9,7 @@ public class Transaction {
     private Integer UserId;
     private float Amount;
     private List<Rule> rule;
-    private LocalDateTime TransactionTime;
+    private Timestamp TransactionTime;
 
     public Transaction() {
     }
@@ -36,11 +38,11 @@ public class Transaction {
         this.rule = rule;
     }
 
-    public LocalDateTime getTransactionTime() {
+    public Timestamp getTransactionTime() {
         return TransactionTime;
     }
 
-    public void setTransactionTime(LocalDateTime transactionTime) {
+    public void setTransactionTime(Timestamp transactionTime) {
         TransactionTime = transactionTime;
     }
 

@@ -1,22 +1,23 @@
 package org.stream.model;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class Transaction {
 
-    private String UserId;
+    private Integer UserId;
     private float Amount;
     private List<Rule> rule;
-    private LocalDateTime TransactionTime;
+    private Timestamp TransactionTime;
 
     public Transaction() {
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return UserId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         UserId = userId;
     }
 
@@ -36,11 +37,21 @@ public class Transaction {
         this.rule = rule;
     }
 
-    public LocalDateTime getTransactionTime() {
+    public Timestamp getTransactionTime() {
         return TransactionTime;
     }
 
-    public void setTransactionTime(LocalDateTime transactionTime) {
+    public void setTransactionTime(Timestamp transactionTime) {
         TransactionTime = transactionTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "UserId=" + UserId +
+                ", Amount=" + Amount +
+                ", rule=" + rule +
+                ", TransactionTime=" + TransactionTime +
+                '}';
     }
 }

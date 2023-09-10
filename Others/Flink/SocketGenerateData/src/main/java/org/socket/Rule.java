@@ -35,5 +35,14 @@ public class Rule {
     public void setMaximumTransactionPerDay(Integer maximumTransactionPerDay) {
         MaximumTransactionPerDay = maximumTransactionPerDay;
     }
+
+    @Override
+    public String toString() {
+        return "Rule{" +
+                "RuleType='" + RuleType + '\'' +
+                ", MaximunAmout=" + MaximunAmout +
+                ", MaximumTransactionPerDay=" + MaximumTransactionPerDay +
+                '}';
+    }
 }
 

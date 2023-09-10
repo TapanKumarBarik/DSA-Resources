@@ -2,21 +2,21 @@ package org.stream.model;
 
 public class Notification {
 
-    private String UserId;
+    private Integer UserId;
     private String RuleType;
     private String NotificationMessage;
 
-    public Notification(String userId, String ruleType, String notificationMessage) {
+    public Notification(Integer userId, String ruleType, String notificationMessage) {
         UserId = userId;
         RuleType = ruleType;
         NotificationMessage = notificationMessage;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return UserId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         UserId = userId;
     }
 

@@ -14,7 +14,9 @@ public class FilterValidTransactions extends RichFilterFunction<Transaction> {
         List<Rule> allRules = transaction.getRule();
 
         for (int i = 0; i < allRules.size(); i++) {
-            if (allRules.get(i).getMaximunAmout() > transaction.getAmount()) {
+            if (allRules.get(i).getMaximunAmout() > transaction.getAmount()
+                    && allRules.get(i).getRuleType().equalsIgnoreCase("MAX")
+            ) {
                 return true;
             }
         }
