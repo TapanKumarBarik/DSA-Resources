@@ -30,7 +30,8 @@ public class FraudDetection {
 
         //MAP
         DataStream<Transaction> transformedData = transactionData.flatMap(new TransactionMapper())
-                .assignTimestampsAndWatermarks(WatermarkStrategy.forBoundedOutOfOrderness(Duration.ofSeconds(10)));;
+                .assignTimestampsAndWatermarks((WatermarkStrategy<Transaction>) new MyTimestampExtractor());
+
         //transformedData.print();
 
         //filter validTransactions , which can be processed

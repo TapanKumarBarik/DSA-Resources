@@ -49,3 +49,25 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+
+public class Solution {
+    public int[][] solve(int[][] A) {
+
+        int n = A.length;
+
+        int m = A[0].length;
+
+        int[][] arr = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+
+            for (int j = 0; j < n; j++) {
+
+                arr[i][j] = A[j][i];
+            }
+        }
+
+        return arr;
+
+    }
+}
