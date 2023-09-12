@@ -53,3 +53,33 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+
+public class Solution {
+    public int solve(int[] A, int B) {
+
+        int ans = 0;
+        int sum = 0;
+
+        for (int i = 0; i < B; i++) {
+            sum += A[i];
+        }
+
+        int minSum = sum;
+        int index = 0;
+
+        for (int i = B; i < A.length; i++) {
+
+            sum -= A[index];
+            sum += A[i];
+
+            if (sum < minSum) {
+                minSum = sum;
+                ans = index + 1;
+            }
+
+            index++;
+        }
+
+        return ans;
+    }
+}
