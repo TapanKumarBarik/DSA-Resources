@@ -65,3 +65,41 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+
+public class Solution {
+    public int[] solve(int[] A) {
+        int n = A.length;
+        int i = 0;
+        int endIndex = 0;
+        int startIndex = 0;
+        int count = 0;
+        int maxCount = 0;
+        while (i < n) {
+            if (A[i] > 0) {
+                count++;
+            } else {
+                if (count > maxCount) {
+                    endIndex = i;
+                    maxCount = count;
+                    startIndex = endIndex - count;
+                    count = 0;
+                } else {
+                    count = 0;
+                }
+            }
+            i++;
+        }
+
+        if (count > maxCount) {
+            endIndex = n;
+            startIndex = n - count;
+        }
+        int[] arr = new int[endIndex - startIndex];
+        int ii = 0;
+        for (int m = startIndex; m < endIndex; m++) {
+            arr[ii] = A[m];
+            ii++;
+        }
+        return arr;
+    }
+}
