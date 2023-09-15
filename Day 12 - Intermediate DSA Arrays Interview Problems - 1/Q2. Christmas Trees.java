@@ -49,7 +49,7 @@
  * 6
  * Output 2:
  * 
- * 7
+ * 7  
  * 
  * 
  * Example Explanation
