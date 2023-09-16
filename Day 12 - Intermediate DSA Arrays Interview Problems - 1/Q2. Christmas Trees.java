@@ -69,3 +69,28 @@
  * Provide sample input and click run to see the correct output for the provided
  * input. Use this to improve your problem understanding and test edge cases
  */
+public class Solution {
+    public int solve(int[] A, int[] B) {
+        final int inf = (int) (1e9 + 10);
+        int n = A.length;
+        int ans = inf;
+        for (int i = 0; i < n; i++) {
+            int left_min = inf, right_min = inf;
+            for (int j = 0; j < i; j++) {
+                if (A[j] < A[i]) {
+                    left_min = Math.min(left_min, B[j]);
+                }
+            }
+            for (int j = i + 1; j < n; j++) {
+                if (A[j] > A[i]) {
+                    right_min = Math.min(right_min, B[j]);
+                }
+            }
+            int temp_ans = left_min + B[i] + right_min;
+            ans = Math.min(ans, temp_ans);
+        }
+        if (ans == inf)
+            ans = -1;
+        return ans;
+    }
+}
